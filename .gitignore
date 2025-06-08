@@ -15,7 +15,7 @@
 # Expo
 /.expo/
 /web-build/
-# /app.config.ts
+/app.config.ts
 
 # Production
 /build
