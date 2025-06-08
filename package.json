@@ -6,6 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "pnpm": {
+    "overrides": {
+      "react": "19.0.0",
+      "@types/react": "^19.0.0",
+      "react-dom": "19.0.0" 
+    }
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
