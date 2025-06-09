@@ -1,27 +1,28 @@
-// import { Text, View } from "react-native";
+import { StyleSheet, View, Text, Pressable } from "react-native";
+import { Link } from "expo-router";
 
-// export default function Index() {
-//   return (
-//     <View
-//       style={{
-//         flex: 1,
-//         justifyContent: "center",
-//         alignItems: "center",
-//       }}
-//     >
-//       <Text>Edit app/index.tsx to edit this screen.</Text>
-//     </View>
-//   );
-// }
-// Example for apps/client-app/app/index.tsx
-import { StyleSheet, View } from "react-native";
-import { Card } from "@mobilepantry/ui";
-
-export default function ClientHomeScreen() {
+export default function LaunchScreen() {
   return (
     <View style={styles.container}>
-      <Card title="This is the Client App" />
-      <Card title="It shares components with the Driver App" />
+      <Text style={styles.title}>Welcome to Mobile Pantry</Text>
+
+      <Link href={{ pathname: "./about" }} asChild>
+        <Pressable style={styles.button}>
+          <Text style={styles.buttonText}>Learn More</Text>
+        </Pressable>
+      </Link>
+
+      <Link href={{ pathname: "/login" }} asChild>
+        <Pressable style={[styles.button, styles.loginButton]}>
+          <Text style={styles.buttonText}>Login</Text>
+        </Pressable>
+      </Link>
+
+      <Link href={{ pathname: "/sign-up" }} asChild>
+        <Pressable style={[styles.button, styles.signupButton]}>
+          <Text style={styles.buttonText}>Sign Up</Text>
+        </Pressable>
+      </Link>
     </View>
   );
 }
@@ -31,5 +32,38 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    padding: 20,
+    backgroundColor: "#f5f5f5", // A light background color
+  },
+  title: {
+    fontSize: 28,
+    fontWeight: "bold",
+    marginBottom: 40,
+    color: "#333",
+    textAlign: "center",
+  },
+  button: {
+    alignItems: "center",
+    justifyContent: "center",
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    borderRadius: 8, // Rounded corners
+    elevation: 3,
+    backgroundColor: "#007AFF", // A standard blue color
+    width: "80%",
+    marginBottom: 15,
+  },
+  loginButton: {
+    backgroundColor: "#4CAF50", // Green color for login
+  },
+  signupButton: {
+    backgroundColor: "#FF9500", // Orange color for sign up
+  },
+  buttonText: {
+    fontSize: 16,
+    lineHeight: 21,
+    fontWeight: "bold",
+    letterSpacing: 0.25,
+    color: "white",
   },
 });
